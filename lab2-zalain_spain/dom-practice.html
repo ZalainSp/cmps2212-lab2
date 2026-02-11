@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM selection Lab</title>
+</head>
+<body>
+    <h1 id="title">DOM selection Lab</h1>
+
+    <p class="info">This is my second Lab.</p>
+    <p class="info">This is DOM selection Lab.</p>
+    <p class="info">This is the text I chose.</p>
+
+    <div id = "container">
+        <button id = "special-btn" class = "action-btn">Click me</button>
+        <button class="action-btn">Don't click me</button>
+    </div>  
+</body>
+
+<script defer>
+
+    const title = document.getElementById('title');
+    if (title) {
+    console.log("Title:" ,title);
+    } else {
+    console.error("Title element not found");
+    }
+
+    const info = document.querySelectorAll('.info');
+    if (info.length > 0){
+    console.log("Info:" ,info);
+    } else {
+    console.error("Info elements not found");
+    }
+
+    const buttons = document.querySelectorAll('.action-btn');
+    if(buttons.length === 0) {
+        console.error("No buttons found");
+    } else {
+        console.log("Buttons:", buttons);
+    }
+
+</script>
+
+</html>

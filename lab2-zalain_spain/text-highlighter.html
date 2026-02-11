@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Highlighter</title>
+</head>
+<body>
+    <h1 id="page-title">Text Highlighter</h1>
+    <p class="paragraph">This is the first paragraph.</p>
+    <p class="paragraph">This is the second paragraph.</p>
+    <p class="paragraph">This is the third paragraph.</p>
+    <p class="paragraph">This is the fourth paragraph.</p>
+
+    <button id="highlight-btn">Highlight All</button>
+    <button id="clear-btn">Clear Highlights</button>
+    <button id="toggle-btn">Toggle First Paragraph</button>
+
+<style>
+    .highlight {
+        background-color: yellow;
+        padding: 10px;
+        border-left: 4px solid orange;
+    }
+</style>
+
+<script defer>
+    const paragraphs  = document.querySelectorAll('.paragraph');
+    const paragraph1 = document.querySelector('.paragraph');
+    const highlightBtn = document.getElementById('highlight-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const toggleBtn = document.getElementById('toggle-btn');
+
+    if(paragraphs.length === 0) {
+        console.error("No paragraphs found");
+    } else {
+        console.log("Paragraphs:", paragraphs);
+    }
+
+    if(paragraph1) {
+        console.log("First Paragraph:", paragraph1);
+    } else {
+        console.error("First paragraph not found");
+    }
+
+    if(!highlightBtn) {
+        console.error("Highlight button not found");
+    } else {
+        console.log("Highlight Button:", highlightBtn);
+    }
+
+    if(!clearBtn) {
+        console.error("Clear button not found");
+    } else {
+        console.log("Clear Button:", clearBtn);
+    }
+
+    if(!toggleBtn) {
+        console.error("Toggle button not found");
+    } else {
+        console.log("Toggle Button:", toggleBtn);
+    }
+
+    highlightBtn.addEventListener('click', function() {
+        paragraphs.forEach(p => { p.classList.add('highlight')
+        });
+    });
+
+    clearBtn.addEventListener('click', function() {
+        paragraphs.forEach(p => { p.classList.remove('highlight')
+        });
+    });
+
+    toggleBtn.addEventListener('click', function() {
+        if(paragraph1) {
+            paragraph1.classList.toggle('highlight');
+        }
+    });
+    
+
+
+</script>
+
+</body>
+</html>
